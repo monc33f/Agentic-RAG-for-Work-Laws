@@ -111,13 +111,12 @@ pip install -r requirements.txt
 
 Le projet utilise une API pour interroger le modèle Qwen 2.5 72B, ainsi que DuckDuckGo pour la recherche Web. Intégrer votre clé API dans le fichier config.py.
 
-6. Initialiser la Base Vectorielle (ChromaDB)
+#6. Préparer les Modèles Locaux
+Pour garantir des performances optimales et un fonctionnement hors-ligne, téléchargez d'abord le modèle de *Reranking* dans le répertoire dédié:
 
-Avant de poser votre première question, vous devez ingérer les 11 documents juridiques (PDF) pour créer les embeddings locaux avec BAAI/bge-m3 :
-
-```Bash
-python ingest_documents.py
-(Note : Selon votre architecture, cette étape peut se lancer automatiquement au premier démarrage de l'application).
+```bash
+# Télécharger le modèle de Reranking localement
+huggingface-cli download BAAI/bge-reranker-v2-m3 --local-dir data/models/reranker
 
 ```
 7. Lancer l'application
