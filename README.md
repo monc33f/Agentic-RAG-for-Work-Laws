@@ -111,7 +111,7 @@ pip install -r requirements.txt
 
 Le projet utilise une API pour interroger le modèle Qwen 2.5 72B, ainsi que DuckDuckGo pour la recherche Web. Intégrer votre clé API dans le fichier config.py.
 
-7. Initialiser la Base Vectorielle (ChromaDB)
+6. Initialiser la Base Vectorielle (ChromaDB)
 
 Avant de poser votre première question, vous devez ingérer les 11 documents juridiques (PDF) pour créer les embeddings locaux avec BAAI/bge-m3 :
 
