@@ -1,4 +1,4 @@
-# ⚖️ Expert Légal Maroc - Advanced RAG Agent
+# ⚖️ Expert Légal en code de travail - Advanced RAG Agent
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B)
@@ -85,8 +85,8 @@ Assurez-vous d'avoir Python 3.9+ installé.
 
 ### 2. Cloner le dépôt
 ```bash
-git clone [https://github.com/votre-nom-utilisateur/expert-legal-maroc.git](https://github.com/votre-nom-utilisateur/expert-legal-maroc.git)
-cd expert-legal-maroc
+git clone [https://github.com/monc33f/Agentic-RAG-for-Work-Laws.git](https://github.com/monc33f/Agentic-RAG-for-Work-Laws.git)
+cd Agentic-RAG-for-Work-Laws
 ```
 
 ### 3. Créer un environnement virtuel (Recommandé)
