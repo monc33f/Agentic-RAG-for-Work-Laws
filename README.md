@@ -28,8 +28,8 @@ Un assistant juridique intelligent spécialisé dans le **Droit du Travail Maroc
 
 Le système intègre une suite d'évaluation automatisée robuste pour mesurer la qualité des réponses sur un dataset de 60 questions couvrant diverses taxonomies (Factuel, Cas Pratique, Procédural) et personas.
 
-* **Similarité Sémantique Globale : 87.15 %**
-* **Résistance aux attaques (Red Teaming) :** Taux de faux positifs réduit à 0% grâce au Guardrail Hybride sur les domaines de la Moudawana, du Droit Pénal et du Droit Fiscal.
+* **Similarité Sémantique Globale : 87.33 %**
+* **Résistance aux attaques (Red Teaming) :** Taux de faux positifs réduit grâce au Guardrail Hybride sur d'autres domaines.
 
 ---
 
