@@ -108,18 +108,11 @@ pip install -r requirements.txt
 ```
 
 5. Configurer les variables d'environnement
-Le projet utilise une API pour interroger le modèle Qwen 2.5 72B, ainsi que DuckDuckGo pour la recherche Web. Créez un fichier .env à la racine du projet :
 
-```Bash
-# Copiez le fichier d'exemple (si fourni) ou créez-en un nouveau
-cp .env.example .env
-```
-Éditez le fichier .env pour y ajouter votre clé d'API (Hugging Face, Together AI, etc.) :
+Le projet utilise une API pour interroger le modèle Qwen 2.5 72B, ainsi que DuckDuckGo pour la recherche Web. Intégrer votre clé API dans le fichier config.py.
 
-Plaintext
-LLM_API_KEY=votre_cle_api_ici
+7. Initialiser la Base Vectorielle (ChromaDB)
 
-6. Initialiser la Base Vectorielle (ChromaDB)
 Avant de poser votre première question, vous devez ingérer les 11 documents juridiques (PDF) pour créer les embeddings locaux avec BAAI/bge-m3 :
 
 ```Bash
@@ -128,6 +121,7 @@ python ingest_documents.py
 
 ```
 7. Lancer l'application
+
 Démarrez l'interface graphique Streamlit :
 
 ```Bash
