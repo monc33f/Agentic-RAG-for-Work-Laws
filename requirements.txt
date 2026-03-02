@@ -1,0 +1,15 @@
+streamlit
+chromadb
+langchain-community
+langchain-core
+huggingface_hub
+FlagEmbedding
+sentence-transformers
+pdfplumber
+numpy
+scikit-learn
+torch
+transformers==4.44.0
+duckduckgo-search
+requests 
+beautifulsoup4
