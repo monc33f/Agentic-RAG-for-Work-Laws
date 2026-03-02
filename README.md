@@ -68,8 +68,8 @@ Pour simuler un environnement de production réel, les requêtes ont été crois
     * Un score exceptionnellement élevé pour le domaine juridique, démontrant la capacité du pipeline *Retrieve & Rerank* à extraire les bons articles (Code du Travail, Décrets, CNSS) et du modèle Qwen 72B à générer une réponse fidèle au contexte sans halluciner.
 
 * 🛡️ **Résistance aux attaques et Guardrail Hybride (Red Teaming) :**
-    * **Zéro Faux Positif sur les "Edge Cases" :** Le système a appris à ne plus bloquer les questions juridiquement valides partageant un champ lexical avec d'autres domaines (ex: *Moudawana/Héritage* pour les rentes d'orphelins suite à un accident de travail, *Droit Immobilier* pour l'acquisition de locaux par les syndicats).
-    * **Blocage absolu du Hors-Sujet :** Le routeur rejette avec une précision de 100% les requêtes n'ayant aucun lien avec le droit du travail marocain (ex: Test validé sur le rejet de la requête *"Quel est le meilleur tajine de Rabat ?"*).
+    * **Peu de Faux Positif sur les "Edge Cases" :** Le système a appris à ne plus bloquer les questions juridiquement valides partageant un champ lexical avec d'autres domaines (ex: *Moudawana/Héritage* pour les rentes d'orphelins suite à un accident de travail, *Droit Immobilier* pour l'acquisition de locaux par les syndicats).
+    * **Blocage absolu du Hors-Sujet :** Le routeur rejette avec une haute précision les requêtes n'ayant aucun lien avec le droit du travail marocain (ex: Test validé sur le rejet de la requête *"Quel est le meilleur tajine de Rabat ?"*).
 
 * 🌐 **Validation du Fallback Web (CRAG) :**
     * Le système a prouvé sa capacité à identifier les "trous" dans sa propre base de connaissances locale. Face à des questions nécessitant des données futures ou non documentées dans les PDF (ex: *"Comment s'inscrire sur Damancom en 2026 ?"*), l'agent court-circuite avec succès la base vectorielle pour déclencher une recherche DuckDuckGo en temps réel.
