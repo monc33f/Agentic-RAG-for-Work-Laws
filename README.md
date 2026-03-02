@@ -46,13 +46,11 @@ Ce pilier permet à l'agent de vulgariser les démarches administratives et de r
 - **Modèle LLM :** Qwen 2.5 72B Instruct (via API)
 - **Modèle d'Embedding :** BAAI/bge-m3 (Local)
 - **Base Vectorielle :** ChromaDB
-- **Évaluation MLOps :** Scikit-learn (Similarité Cosinus), LLM-as-a-Judge
+- **Évaluation MLOps :** Scikit-learn (Similarité Cosinus)
 
 ## 📊 Évaluation et Performances (MLOps)
 
-Le système intègre une suite d'évaluation automatisée robuste (inspirée des architectures *LLM-as-a-Judge*) pour mesurer la qualité des réponses. Les performances ont été mesurées hors-ligne en calculant la **Similarité Cosinus (Scikit-learn)** entre les réponses générées par le système et un *Ground Truth* (réponses idéales de référence).
-
-Le benchmark repose sur un dataset "Red Teaming" propriétaire de **60 questions** spécifiquement conçu pour stress-tester les limites sémantiques et comportementales de l'agent.
+Le système intègre une suite d'évaluation automatisée robuste (inspirée des architectures *LLM-as-a-Judge*) pour mesurer la qualité des réponses. Les performances ont été mesurées hors-ligne en calculant la **Similarité Cosinus (Scikit-learn)** entre les réponses générées par le système et un *Ground Truth* (réponses idéales de référence générées à l'aide d'un LLM en se basant sur des extraits différents de notre base de connaissances).
 
 ### 🧬 Composition du Dataset de Test
 Pour simuler un environnement de production réel, les requêtes ont été croisées selon deux axes :
