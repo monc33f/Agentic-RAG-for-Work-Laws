@@ -1,4 +1,4 @@
-# ⚖️ Expert Légal en code de travail - Advanced RAG Agent
+# ⚖️ Expert Légal en Droit de Travail - Advanced RAG Agent
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B)
@@ -41,13 +41,17 @@ Ce pilier permet à l'agent de vulgariser les démarches administratives et de r
 - **🎯 Retrieve & Rerank Pipeline :** Une fois les documents extraits par la base vectorielle (ChromaDB), un modèle de *Reranking* intervient pour réévaluer et trier les extraits de loi. Il garantit que l'article le plus pertinent remonte en première position, évitant ainsi la dilution du contexte (Lost in the Middle).
 - **🔄 Self-Refine Loop (Superviseurs d'Hallucination) :** Le système évalue ses propres réponses avant de les afficher. Si la réponse n'est pas fidèle au contexte juridique (*Faithfulness*) ou ne répond pas à la question (*Relevance*), l'agent reformule sa recherche avec une stratégie élargie et tente un second cycle.
 - **🌐 CRAG (Corrective RAG) & Web Fallback :** Si les documents locaux ne contiennent pas la réponse après évaluation (ex: lois récentes ou adresses d'agences), l'agent bascule automatiquement sur une recherche Web via DuckDuckGo pour trouver un contexte à jour.
-- 
+  
+  <p align="center">
+  <img src="Schèma_architecture.png" alt="Aperçu du projet Expert Légal Maroc" width="700">
+</p>
+
 ## 🛠️ Stack Technique
 
 - **Interface Utilisateur :** Streamlit
-- **Modèle LLM :** Qwen 2.5 72B Instruct (via API)
-- **Modèle d'Embedding :** BAAI/bge-m3 (Local)
-- **Modèle de Reranking :** BAAI/bge-reranker-v2-m3 (Local)
+- **Modèle LLM :** Qwen 2.5 72B Instruct 
+- **Modèle d'Embedding :** BAAI/bge-m3 
+- **Modèle de Reranking :** BAAI/bge-reranker-v2-m3 
 - **Base Vectorielle :** ChromaDB
 - **Moteur de Recherche Web :** DuckDuckGo Search API
 - **Évaluation MLOps :** Scikit-learn (Similarité Cosinus), LLM-as-a-Judge
