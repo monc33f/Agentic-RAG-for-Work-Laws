@@ -116,7 +116,7 @@ Pour garantir des performances optimales et un fonctionnement hors-ligne, télé
 
 ```bash
 # Télécharger le modèle de Reranking localement
-huggingface-cli download BAAI/bge-reranker-v2-m3 --local-dir data/models/reranker
+huggingface-cli download BAAI/bge-reranker-v2-m3 --local-dir ./models/reranker
 
 ```
 7. Lancer l'application
