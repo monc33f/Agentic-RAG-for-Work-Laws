@@ -36,10 +36,12 @@ Ce pilier permet à l'agent de vulgariser les démarches administratives et de r
 ## ✨ Fonctionnalités Clés (Architecture RAG Avancée)
 
 - **🛡️ Guardrail Hybride (Filtre Lexical + Sémantique) :** Un routeur de requêtes ultra-rapide qui bloque les questions hors-sujet tout en acceptant les cas limites complexes (accidents de travail, médecine du travail, taxes judiciaires) sans consommer de tokens inutiles.
-- **🔄 Self-Refine Loop (Superviseurs d'Hallucination) :** Le système évalue ses propres réponses avant de les afficher. Si la réponse n'est pas fidèle au contexte juridique (`Faithfulness`) ou ne répond pas à la question (`Relevance`), l'agent reformule sa recherche et tente un second cycle.
-- **🌐 CRAG (Corrective RAG) & Web Fallback :** Si les documents locaux ne contiennent pas la réponse (ex: lois récentes de 2026), l'agent bascule automatiquement sur une recherche Web via DuckDuckGo pour trouver un contexte à jour.
-- **🧠 Mémoire Active (Dossier Client) :** Le chatbot maintient un contexte conversationnel continu, mettant à jour le "dossier" de l'utilisateur à chaque interaction pour des réponses personnalisées.
-
+- **🧠 Mémoire Active (Dossier Client) :** Le chatbot maintient un contexte conversationnel continu, synthétisant et mettant à jour le "dossier" de l'utilisateur à chaque interaction pour des réponses personnalisées.
+- **🔀 Query Router & Rewriter :** Avant chaque recherche dans la base de données, le système reformule la question de l'utilisateur en intégrant le contexte du "Dossier Client". Cela permet de transformer une question vague comme *"Quelles sont mes indemnités ?"* en une requête vectorielle optimisée et ultra-précise.
+- **🎯 Retrieve & Rerank Pipeline :** Une fois les documents extraits par la base vectorielle (ChromaDB), un modèle de *Reranking* intervient pour réévaluer et trier les extraits de loi. Il garantit que l'article le plus pertinent remonte en première position, évitant ainsi la dilution du contexte (Lost in the Middle).
+- **🔄 Self-Refine Loop (Superviseurs d'Hallucination) :** Le système évalue ses propres réponses avant de les afficher. Si la réponse n'est pas fidèle au contexte juridique (*Faithfulness*) ou ne répond pas à la question (*Relevance*), l'agent reformule sa recherche avec une stratégie élargie et tente un second cycle.
+- **🌐 CRAG (Corrective RAG) & Web Fallback :** Si les documents locaux ne contiennent pas la réponse après évaluation (ex: lois récentes ou adresses d'agences), l'agent bascule automatiquement sur une recherche Web via DuckDuckGo pour trouver un contexte à jour.
+- 
 ## 🛠️ Stack Technique
 
 - **Interface Utilisateur :** Streamlit
