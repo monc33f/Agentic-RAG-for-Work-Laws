@@ -43,7 +43,7 @@ Ce pilier permet à l'agent de vulgariser les démarches administratives et de r
 - **🌐 CRAG (Corrective RAG) & Web Fallback :** Si les documents locaux ne contiennent pas la réponse après évaluation (ex: lois récentes ou adresses d'agences), l'agent bascule automatiquement sur une recherche Web via DuckDuckGo pour trouver un contexte à jour.
   
   <p align="center">
-  <img src="Schèma_architecture.png" alt="Aperçu du projet Expert Légal Maroc" width="700">
+  <img src="Schéma_architecture.png" alt="Aperçu du projet Expert Légal Maroc" width="700">
 </p>
 
 ## 🛠️ Stack Technique
