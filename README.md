@@ -47,9 +47,11 @@ Ce pilier permet à l'agent de vulgariser les démarches administratives et de r
 - **Interface Utilisateur :** Streamlit
 - **Modèle LLM :** Qwen 2.5 72B Instruct (via API)
 - **Modèle d'Embedding :** BAAI/bge-m3 (Local)
+- **Modèle de Reranking :** BAAI/bge-reranker-v2-m3 (Local)
 - **Base Vectorielle :** ChromaDB
-- **Évaluation MLOps :** Scikit-learn (Similarité Cosinus)
-
+- **Moteur de Recherche Web :** DuckDuckGo Search API
+- **Évaluation MLOps :** Scikit-learn (Similarité Cosinus), LLM-as-a-Judge
+- 
 ## 📊 Évaluation et Performances (MLOps)
 
 Le système intègre une suite d'évaluation automatisée robuste (inspirée des architectures *LLM-as-a-Judge*) pour mesurer la qualité des réponses. Les performances ont été mesurées hors-ligne en calculant la **Similarité Cosinus (Scikit-learn)** entre les réponses générées par le système et un *Ground Truth* (réponses idéales de référence générées à l'aide d'un LLM en se basant sur des extraits différents de notre base de connaissances).
@@ -85,3 +87,49 @@ Assurez-vous d'avoir Python 3.9+ installé.
 ```bash
 git clone [https://github.com/votre-nom-utilisateur/expert-legal-maroc.git](https://github.com/votre-nom-utilisateur/expert-legal-maroc.git)
 cd expert-legal-maroc
+```
+
+### 3. Créer un environnement virtuel (Recommandé)
+Il est fortement conseillé d'isoler les dépendances du projet :
+```bash
+python -m venv venv
+```
+# Sur Windows :
+venv\Scripts\activate
+# Sur macOS/Linux :
+source venv/bin/activate
+
+
+4. Installer les dépendances
+Installez l'ensemble des bibliothèques requises (Streamlit, LangChain, ChromaDB, etc.) via le fichier requirements.txt :
+
+```Bash
+pip install -r requirements.txt
+```
+
+5. Configurer les variables d'environnement
+Le projet utilise une API pour interroger le modèle Qwen 2.5 72B, ainsi que DuckDuckGo pour la recherche Web. Créez un fichier .env à la racine du projet :
+
+```Bash
+# Copiez le fichier d'exemple (si fourni) ou créez-en un nouveau
+cp .env.example .env
+```
+Éditez le fichier .env pour y ajouter votre clé d'API (Hugging Face, Together AI, etc.) :
+
+Plaintext
+LLM_API_KEY=votre_cle_api_ici
+
+6. Initialiser la Base Vectorielle (ChromaDB)
+Avant de poser votre première question, vous devez ingérer les 11 documents juridiques (PDF) pour créer les embeddings locaux avec BAAI/bge-m3 :
+
+```Bash
+python ingest_documents.py
+(Note : Selon votre architecture, cette étape peut se lancer automatiquement au premier démarrage de l'application).
+
+```
+7. Lancer l'application
+Démarrez l'interface graphique Streamlit :
+
+```Bash
+streamlit run app.py
+
